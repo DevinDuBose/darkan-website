@@ -18,7 +18,9 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "build-css": "sass public/scss/index.scss public/css/index.css",
+    "watch-css": "nodemon -e sass -x \"npm run build-css\""
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",
@@ -27,9 +29,11 @@
     "ajv": "^8.6.3",
     "ajv-keywords": "^5.0.0",
     "hbs": "^4.1.2",
+    "nodemon": "^2.0.13",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^7.2.0"
+    "rxjs": "^7.2.0",
+    "sass": "^1.42.1"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.0.0",
